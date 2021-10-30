@@ -11,6 +11,6 @@ This project is broken down into:
 ## French description
 
 Ce projet est décomposé en :
-• une partie scrapping avec l’extraction d’informations dans un ensemble de pages web ;
-• la sérialisation du contenu extrait sous forme d’un fichier .pick;
-• une partie analyse avec la construction d’une DTM et d’outils de requêtes sur le corpus.
+* une partie scrapping avec l’extraction d’informations dans un ensemble de pages web ;
+* la sérialisation du contenu extrait sous forme d’un fichier .pick;
+* une partie analyse avec la construction d’une DTM et d’outils de requêtes sur le corpus.
