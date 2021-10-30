@@ -8,9 +8,13 @@ This project is broken down into:
 * serialization of extracted content as a .pick file;
 * an analysis section with the construction of a DTM and query tools on the corpus.
 
+The **scraping.py** file is dedicated to the scraping part while the **analyse.py**  file contains the analyses made on the scraped website "The Canadian Encyclopedia" (word clouds, creation of a DTM class allowing tag management).
+
 ## French description
 
 Ce projet est décomposé en :
 * une partie scrapping avec l’extraction d’informations dans un ensemble de pages web ;
 * la sérialisation du contenu extrait sous forme d’un fichier .pick;
 * une partie analyse avec la construction d’une DTM et d’outils de requêtes sur le corpus.
+
+Le fichier **scraping.py** est dédié à la partie "scraping" du projet tandis que le fichier **analyse.py** contient les analyses faites sur le site web scrapé (nuages de mots, création d'une clase DTM permettant la gestion des balises).
