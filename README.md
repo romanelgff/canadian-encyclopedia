@@ -1,4 +1,4 @@
-# Web scrapping on The Canadian Encyclopedia
+# Web scrapping (The Canadian Encyclopedia)
 Web-based content analysis of the pages of the Canadian encyclopedia using web scrapping with Python.
 
 ## English description
@@ -9,7 +9,6 @@ This project is broken down into:
 * an analysis section with the construction of a DTM and query tools on the corpus.
 
 The **scraping.py** file is dedicated to the scraping part while the **analyse.py**  file contains the analyses made on the scraped website "The Canadian Encyclopedia" (word clouds, creation of a DTM class allowing tag management). The **stop_words.txt** file contains English stop words that we don't want to include in our analyses. Finally, the file **infos.pick** is the one including the extracted data.
-
 
 
 ## French description
