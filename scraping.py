@@ -50,9 +50,13 @@ def parseURL(url): #fonction recuperant l'url de l'article, le titre et le conte
     texte = getSelectedText(div)
     return (url, titre, texte)
 
+def no_duplicate(x): #fonction enlevant les doublons d'une liste
+    return list(dict.fromkeys(x))
+    
+
 if __name__ == '__main__':
 
-    url = 'https://www.thecanadianencyclopedia.ca/en/browse/things/science-technology/inventions-and-innovations?type=article' 
+    url = 'https://www.thecanadianencyclopedia.ca/en/browse/things/science-technology/inventions-and-innovations' 
     user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML,like Gecko) Chrome/35.0.1916.47 Safari/537.36'
     
     #objet request
@@ -71,11 +75,13 @@ if __name__ == '__main__':
     #print(div1.prettify())
         
     a_list = div1.find_all('a')
-    #print(a_list)
+    print(a_list)
     
     #creation d'une liste sans doublons des url (chaque url apparaissant deux fois dans la source des articles)
-    url_list = [a.attrs['href'] for a, i in zip(a_list, range(len(a_list))) if i % 2 == 0]
-
+    url_list = []
+    url_list = [a.attrs['href'] for a, i in zip(a_list, range(len(a_list)))]
+    url_list = no_duplicate(url_list)
+    
     #liste des pages a scrapper en plus de la page principale, recuperee a partir de la liste d'url ci-dessus
     pages_list = [url for url in url_list if "page" in url]
     #print(pages_list)
@@ -94,8 +100,9 @@ if __name__ == '__main__':
         div2 = bsObj2.find("main", class_="wrap--narrow l l--hasSidebar search-listing-result")
         liste_a2 = div2.find_all('a')
         
-        url_list.append([a.attrs['href'] for a, i in zip(liste_a2, range(len(liste_a2))) if i % 2 == 0])
+        url_list.append([a.attrs['href'] for a, i in zip(liste_a2, range(len(liste_a2)))])
     
+    url_list = no_duplicate(url_list)
     url_list = [url for url in url_list if "article/" in url] #liste finale ne contenant que les articles
     #print(url_list)
     
